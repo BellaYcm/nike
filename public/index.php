@@ -5,18 +5,15 @@
  * Date: 2015/3/4
  * Time: 12:00
  */
-use Illuminate\Database\Capsule\Manager as Capsule;
+// 定义 PUBLIC_PATH /opt/www/minisites/nike/public
+//var_dump(__DIR__);
 
-// Autoload 自动载入
-require '../vendor/autoload.php';
+define('PUBLIC_PATH', __DIR__);
 
-// Eloquent ORM
+// 启动器
 
-$capsule = new Capsule;
+require PUBLIC_PATH.'/../bootstrap.php';
 
-$capsule->addConnection(require '../config/database.php');
+// 路由配置、开始处理
 
-$capsule->bootEloquent();
-
-// 路由配置
-require '../config/routes.php';
+require BASE_PATH.'/config/routes.php';

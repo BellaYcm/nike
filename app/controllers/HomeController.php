@@ -10,9 +10,15 @@ class HomeController extends BaseController
 
     public function home()
     {
+        //throw new Exception("aa","123");
+//        $article=User::find(1);
+//        var_dump($article->username);
+//        var_dump($article);
+//        require dirname(__FILE__).'/../views/home.php';
+        $this->view = View::make('home')->with('user',User::first())
 
-        $article=User::first();
-        var_dump($article);
-        require dirname(__FILE__).'/../views/home.php';
+            ->withTitle('MFFC :-D')
+
+            ->withFuckMe('OK!');
     }
 }
