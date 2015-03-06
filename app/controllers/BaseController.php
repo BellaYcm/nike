@@ -26,10 +26,20 @@ class BaseController
         $view = $this->view;
 
         if ( $view instanceof View ) {
-
+            var_dump($view->data);
             extract($view->data);
 
             require $view->view;
+
+        }
+        var_dump($this->mail);
+        $mail = $this->mail;
+
+        if ( $mail instanceof Mail ) {
+
+            $mailer = new Nette\Mail\SmtpMailer($mail->config);
+
+            $mailer->send($mail);
 
         }
 
