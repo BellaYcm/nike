@@ -3,7 +3,9 @@
      "noahbuscher/macaw": "dev-master",
      "illuminate/database": "*",
      "twig/twig":"*",
-     "filp/whoops": "*"
+     "filp/whoops": "*",
+     "nette/mail": "*",
+     "predis/predis": "*"
 },
      "autoload":{
           "classmap":[
