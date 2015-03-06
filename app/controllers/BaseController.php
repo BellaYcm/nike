@@ -16,9 +16,27 @@ class BaseController
     public function __construct()
 
     {
-
+        $this->_redis();
     }
 
+    /**
+     *
+     */
+    private function _redis() {
+        try{
+        $redis = new Redis();
+        $redis->connect("127.0.0.1","6379");
+        $this->redis = $redis;
+        }
+        catch(Exception $e){
+            die($e->getMessage());
+        }
+    }
+
+
+    /**
+     *
+     */
     public function __destruct()
 
     {
@@ -32,16 +50,7 @@ class BaseController
             require $view->view;
 
         }
-        var_dump($this->mail);
-        $mail = $this->mail;
 
-        if ( $mail instanceof Mail ) {
-
-            $mailer = new Nette\Mail\SmtpMailer($mail->config);
-
-            $mailer->send($mail);
-
-        }
 
     }
 
