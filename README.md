@@ -1,4 +1,5 @@
 
+composer -v<br>
 composer dump-autoload<br>
 composer update<br>
 uglifycss [options] [filename] [...] > output<br>
