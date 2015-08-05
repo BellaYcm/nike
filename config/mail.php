@@ -11,7 +11,7 @@ return array(
 
     'username' => 'sunkejl@sina.com',
 
-    'password' => 'ycm@2012!',
+    'password' => '*******',
 
     'secure' => ''
 
